@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 @main
 struct PrayerRequestCollectorApp: App {
@@ -13,7 +14,9 @@ struct PrayerRequestCollectorApp: App {
 
     var body: some Scene {
         WindowGroup {
-            MainView()
+            MainView(store: Store(initialState: MainViewReducer.State(), reducer: {
+                MainViewReducer()
+            }))
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

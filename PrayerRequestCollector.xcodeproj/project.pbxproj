@@ -17,9 +17,13 @@
 		32879D722B19ED53000032EF /* PrayerRequestCollectorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32879D712B19ED53000032EF /* PrayerRequestCollectorUITestsLaunchTests.swift */; };
 		32879D7F2B19EEB6000032EF /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32879D7E2B19EEB6000032EF /* MainView.swift */; };
 		328EF58A2B46342B0061BC86 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 328EF5892B46342B0061BC86 /* ComposableArchitecture */; };
-		32E3D1BD2B4CCFE0004FAAD5 /* MemberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E3D1BC2B4CCFE0004FAAD5 /* MemberView.swift */; };
+		32E3D1BD2B4CCFE0004FAAD5 /* GroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E3D1BC2B4CCFE0004FAAD5 /* GroupView.swift */; };
 		32E3D1BF2B4CCFF7004FAAD5 /* WriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E3D1BE2B4CCFF7004FAAD5 /* WriteView.swift */; };
 		32E3D1C12B4CD004004FAAD5 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E3D1C02B4CD004004FAAD5 /* SearchView.swift */; };
+		32E3D1C62B4CD3F5004FAAD5 /* GroupViewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E3D1C52B4CD3F5004FAAD5 /* GroupViewReducer.swift */; };
+		32E3D1C82B4CD969004FAAD5 /* SearchViewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E3D1C72B4CD969004FAAD5 /* SearchViewReducer.swift */; };
+		32E3D1CA2B4CD970004FAAD5 /* WriteViewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E3D1C92B4CD970004FAAD5 /* WriteViewReducer.swift */; };
+		32E3D1CE2B4CDCFA004FAAD5 /* MainViewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E3D1CD2B4CDCFA004FAAD5 /* MainViewReducer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,9 +57,13 @@
 		32879D6F2B19ED53000032EF /* PrayerRequestCollectorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerRequestCollectorUITests.swift; sourceTree = "<group>"; };
 		32879D712B19ED53000032EF /* PrayerRequestCollectorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerRequestCollectorUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		32879D7E2B19EEB6000032EF /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		32E3D1BC2B4CCFE0004FAAD5 /* MemberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberView.swift; sourceTree = "<group>"; };
+		32E3D1BC2B4CCFE0004FAAD5 /* GroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupView.swift; sourceTree = "<group>"; };
 		32E3D1BE2B4CCFF7004FAAD5 /* WriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteView.swift; sourceTree = "<group>"; };
 		32E3D1C02B4CD004004FAAD5 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		32E3D1C52B4CD3F5004FAAD5 /* GroupViewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewReducer.swift; sourceTree = "<group>"; };
+		32E3D1C72B4CD969004FAAD5 /* SearchViewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewReducer.swift; sourceTree = "<group>"; };
+		32E3D1C92B4CD970004FAAD5 /* WriteViewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewReducer.swift; sourceTree = "<group>"; };
+		32E3D1CD2B4CDCFA004FAAD5 /* MainViewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewReducer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,11 +155,11 @@
 		328EF58B2B463AEF0061BC86 /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
-				32879D4E2B19ED53000032EF /* PrayerRequestCollectorApp.swift */,
-				32879D7E2B19EEB6000032EF /* MainView.swift */,
-				32E3D1BC2B4CCFE0004FAAD5 /* MemberView.swift */,
-				32E3D1BE2B4CCFF7004FAAD5 /* WriteView.swift */,
-				32E3D1C02B4CD004004FAAD5 /* SearchView.swift */,
+				32E3D1CC2B4CDCE2004FAAD5 /* App */,
+				32E3D1CB2B4CDC80004FAAD5 /* Main */,
+				32E3D1C42B4CD321004FAAD5 /* Search */,
+				32E3D1C32B4CD31B004FAAD5 /* Write */,
+				32E3D1C22B4CD30F004FAAD5 /* Group */,
 			);
 			path = PresentationLayer;
 			sourceTree = "<group>";
@@ -176,6 +184,50 @@
 				32879D522B19ED53000032EF /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		32E3D1C22B4CD30F004FAAD5 /* Group */ = {
+			isa = PBXGroup;
+			children = (
+				32E3D1BC2B4CCFE0004FAAD5 /* GroupView.swift */,
+				32E3D1C52B4CD3F5004FAAD5 /* GroupViewReducer.swift */,
+			);
+			path = Group;
+			sourceTree = "<group>";
+		};
+		32E3D1C32B4CD31B004FAAD5 /* Write */ = {
+			isa = PBXGroup;
+			children = (
+				32E3D1BE2B4CCFF7004FAAD5 /* WriteView.swift */,
+				32E3D1C92B4CD970004FAAD5 /* WriteViewReducer.swift */,
+			);
+			path = Write;
+			sourceTree = "<group>";
+		};
+		32E3D1C42B4CD321004FAAD5 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				32E3D1C02B4CD004004FAAD5 /* SearchView.swift */,
+				32E3D1C72B4CD969004FAAD5 /* SearchViewReducer.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		32E3D1CB2B4CDC80004FAAD5 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				32879D7E2B19EEB6000032EF /* MainView.swift */,
+				32E3D1CD2B4CDCFA004FAAD5 /* MainViewReducer.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		32E3D1CC2B4CDCE2004FAAD5 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				32879D4E2B19ED53000032EF /* PrayerRequestCollectorApp.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,11 +368,15 @@
 			files = (
 				32879D582B19ED53000032EF /* Persistence.swift in Sources */,
 				32879D5B2B19ED53000032EF /* PrayerRequestCollector.xcdatamodeld in Sources */,
+				32E3D1C82B4CD969004FAAD5 /* SearchViewReducer.swift in Sources */,
+				32E3D1CA2B4CD970004FAAD5 /* WriteViewReducer.swift in Sources */,
 				32E3D1BF2B4CCFF7004FAAD5 /* WriteView.swift in Sources */,
+				32E3D1C62B4CD3F5004FAAD5 /* GroupViewReducer.swift in Sources */,
 				32E3D1C12B4CD004004FAAD5 /* SearchView.swift in Sources */,
 				32879D7F2B19EEB6000032EF /* MainView.swift in Sources */,
-				32E3D1BD2B4CCFE0004FAAD5 /* MemberView.swift in Sources */,
+				32E3D1BD2B4CCFE0004FAAD5 /* GroupView.swift in Sources */,
 				32879D4F2B19ED53000032EF /* PrayerRequestCollectorApp.swift in Sources */,
+				32E3D1CE2B4CDCFA004FAAD5 /* MainViewReducer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
