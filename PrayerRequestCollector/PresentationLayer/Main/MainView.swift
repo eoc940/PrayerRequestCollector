@@ -42,7 +42,7 @@ extension MainView {
     }
     
     var groupView: some View {
-        GroupView(store: Store(initialState: GroupViewReducer.State(), reducer: {
+        GroupView(store: Store(initialState: GroupViewReducer.State(rowReducers: .init()), reducer: {
             GroupViewReducer()
         }))
         .tabItem {

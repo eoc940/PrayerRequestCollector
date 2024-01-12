@@ -10,7 +10,8 @@ import ComposableArchitecture
 
 struct GroupView: View {
     let store: StoreOf<GroupViewReducer>
-    let viewStore: ViewStoreOf<GroupViewReducer>
+    @ObservedObject
+    var viewStore: ViewStoreOf<GroupViewReducer>
     
     init(store: StoreOf<GroupViewReducer>) {
         self.store = store
@@ -23,6 +24,20 @@ struct GroupView: View {
         VStack {
             Text("모임 관리")
                 .font(Font.headline.bold())
+            groupList
+        }
+        .onAppear {
+            viewStore.send(.viewEvent(.onAppear))
+        }
+    }
+    
+    var groupList: some View {
+        VStack {
+            List {
+                ForEachStore(self.store.scope(state: \.rowReducers, action: GroupViewReducer.Action.rowReducerAction(id: action:))) { store in
+                    GroupRow(store: store)
+                }
+            }
             
         }
     }
@@ -30,7 +45,7 @@ struct GroupView: View {
 
 struct GroupView_Previews: PreviewProvider {
     static var previews: some View {
-        GroupView(store: Store(initialState: GroupViewReducer.State(), reducer: {
+        GroupView(store: Store(initialState: GroupViewReducer.State(rowReducers: .init()), reducer: {
             GroupViewReducer()
         }))
     }

@@ -10,7 +10,8 @@ import ComposableArchitecture
 
 struct SearchView: View {
     let store: StoreOf<SearchViewReducer>
-    let viewStore: ViewStoreOf<SearchViewReducer>
+    @ObservedObject
+    var viewStore: ViewStoreOf<SearchViewReducer>
     
     init(store: StoreOf<SearchViewReducer>) {
         self.store = store

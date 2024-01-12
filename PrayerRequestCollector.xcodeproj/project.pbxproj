@@ -17,6 +17,17 @@
 		32879D722B19ED53000032EF /* PrayerRequestCollectorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32879D712B19ED53000032EF /* PrayerRequestCollectorUITestsLaunchTests.swift */; };
 		32879D7F2B19EEB6000032EF /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32879D7E2B19EEB6000032EF /* MainView.swift */; };
 		328EF58A2B46342B0061BC86 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 328EF5892B46342B0061BC86 /* ComposableArchitecture */; };
+		32BC6D4B2B51472F00870126 /* GroupClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BC6D4A2B51472F00870126 /* GroupClient.swift */; };
+		32BC6D4D2B51473600870126 /* GroupLiveKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BC6D4C2B51473600870126 /* GroupLiveKey.swift */; };
+		32BC6D512B5149DC00870126 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BC6D502B5149DC00870126 /* Member.swift */; };
+		32BC6D532B5149E200870126 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BC6D522B5149E200870126 /* Group.swift */; };
+		32BC6D562B514BA600870126 /* GroupRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BC6D552B514BA600870126 /* GroupRepositoryProtocol.swift */; };
+		32BC6D5B2B514BE600870126 /* GroupRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BC6D5A2B514BE600870126 /* GroupRepositoryMock.swift */; };
+		32BC6D5D2B5150C100870126 /* GroupRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BC6D5C2B5150C100870126 /* GroupRepository.swift */; };
+		32BC6D5F2B5159E000870126 /* GroupDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BC6D5E2B5159E000870126 /* GroupDetailView.swift */; };
+		32BC6D612B5159EB00870126 /* GroupDetailReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BC6D602B5159EB00870126 /* GroupDetailReducer.swift */; };
+		32BC6D632B515DBE00870126 /* GroupRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BC6D622B515DBE00870126 /* GroupRow.swift */; };
+		32BC6D652B515DDF00870126 /* GroupRowReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BC6D642B515DDF00870126 /* GroupRowReducer.swift */; };
 		32E3D1BD2B4CCFE0004FAAD5 /* GroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E3D1BC2B4CCFE0004FAAD5 /* GroupView.swift */; };
 		32E3D1BF2B4CCFF7004FAAD5 /* WriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E3D1BE2B4CCFF7004FAAD5 /* WriteView.swift */; };
 		32E3D1C12B4CD004004FAAD5 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E3D1C02B4CD004004FAAD5 /* SearchView.swift */; };
@@ -57,6 +68,17 @@
 		32879D6F2B19ED53000032EF /* PrayerRequestCollectorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerRequestCollectorUITests.swift; sourceTree = "<group>"; };
 		32879D712B19ED53000032EF /* PrayerRequestCollectorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerRequestCollectorUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		32879D7E2B19EEB6000032EF /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		32BC6D4A2B51472F00870126 /* GroupClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupClient.swift; sourceTree = "<group>"; };
+		32BC6D4C2B51473600870126 /* GroupLiveKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupLiveKey.swift; sourceTree = "<group>"; };
+		32BC6D502B5149DC00870126 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
+		32BC6D522B5149E200870126 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		32BC6D552B514BA600870126 /* GroupRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupRepositoryProtocol.swift; sourceTree = "<group>"; };
+		32BC6D5A2B514BE600870126 /* GroupRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupRepositoryMock.swift; sourceTree = "<group>"; };
+		32BC6D5C2B5150C100870126 /* GroupRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupRepository.swift; sourceTree = "<group>"; };
+		32BC6D5E2B5159E000870126 /* GroupDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailView.swift; sourceTree = "<group>"; };
+		32BC6D602B5159EB00870126 /* GroupDetailReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailReducer.swift; sourceTree = "<group>"; };
+		32BC6D622B515DBE00870126 /* GroupRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupRow.swift; sourceTree = "<group>"; };
+		32BC6D642B515DDF00870126 /* GroupRowReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupRowReducer.swift; sourceTree = "<group>"; };
 		32E3D1BC2B4CCFE0004FAAD5 /* GroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupView.swift; sourceTree = "<group>"; };
 		32E3D1BE2B4CCFF7004FAAD5 /* WriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteView.swift; sourceTree = "<group>"; };
 		32E3D1C02B4CD004004FAAD5 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
@@ -167,6 +189,7 @@
 		328EF58C2B463AFD0061BC86 /* DomainLayer */ = {
 			isa = PBXGroup;
 			children = (
+				32BC6D4F2B51492400870126 /* Model */,
 			);
 			path = DomainLayer;
 			sourceTree = "<group>";
@@ -174,6 +197,8 @@
 		328EF58D2B463B030061BC86 /* DataLayer */ = {
 			isa = PBXGroup;
 			children = (
+				32BC6D542B514B8B00870126 /* Repositories */,
+				32BC6D4E2B51491D00870126 /* Entity */,
 			);
 			path = DataLayer;
 			sourceTree = "<group>";
@@ -186,11 +211,67 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		32BC6D4E2B51491D00870126 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		32BC6D4F2B51492400870126 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				32BC6D502B5149DC00870126 /* Member.swift */,
+				32BC6D522B5149E200870126 /* Group.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		32BC6D542B514B8B00870126 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				32BC6D592B514BBD00870126 /* Search */,
+				32BC6D582B514BB700870126 /* Write */,
+				32BC6D572B514BAD00870126 /* Group */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		32BC6D572B514BAD00870126 /* Group */ = {
+			isa = PBXGroup;
+			children = (
+				32BC6D552B514BA600870126 /* GroupRepositoryProtocol.swift */,
+				32BC6D5A2B514BE600870126 /* GroupRepositoryMock.swift */,
+				32BC6D5C2B5150C100870126 /* GroupRepository.swift */,
+			);
+			path = Group;
+			sourceTree = "<group>";
+		};
+		32BC6D582B514BB700870126 /* Write */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Write;
+			sourceTree = "<group>";
+		};
+		32BC6D592B514BBD00870126 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		32E3D1C22B4CD30F004FAAD5 /* Group */ = {
 			isa = PBXGroup;
 			children = (
 				32E3D1BC2B4CCFE0004FAAD5 /* GroupView.swift */,
 				32E3D1C52B4CD3F5004FAAD5 /* GroupViewReducer.swift */,
+				32BC6D4A2B51472F00870126 /* GroupClient.swift */,
+				32BC6D4C2B51473600870126 /* GroupLiveKey.swift */,
+				32BC6D5E2B5159E000870126 /* GroupDetailView.swift */,
+				32BC6D602B5159EB00870126 /* GroupDetailReducer.swift */,
+				32BC6D622B515DBE00870126 /* GroupRow.swift */,
+				32BC6D642B515DDF00870126 /* GroupRowReducer.swift */,
 			);
 			path = Group;
 			sourceTree = "<group>";
@@ -367,16 +448,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				32879D582B19ED53000032EF /* Persistence.swift in Sources */,
+				32BC6D5F2B5159E000870126 /* GroupDetailView.swift in Sources */,
+				32BC6D632B515DBE00870126 /* GroupRow.swift in Sources */,
 				32879D5B2B19ED53000032EF /* PrayerRequestCollector.xcdatamodeld in Sources */,
 				32E3D1C82B4CD969004FAAD5 /* SearchViewReducer.swift in Sources */,
+				32BC6D532B5149E200870126 /* Group.swift in Sources */,
+				32BC6D4B2B51472F00870126 /* GroupClient.swift in Sources */,
 				32E3D1CA2B4CD970004FAAD5 /* WriteViewReducer.swift in Sources */,
+				32BC6D512B5149DC00870126 /* Member.swift in Sources */,
+				32BC6D652B515DDF00870126 /* GroupRowReducer.swift in Sources */,
+				32BC6D562B514BA600870126 /* GroupRepositoryProtocol.swift in Sources */,
 				32E3D1BF2B4CCFF7004FAAD5 /* WriteView.swift in Sources */,
 				32E3D1C62B4CD3F5004FAAD5 /* GroupViewReducer.swift in Sources */,
 				32E3D1C12B4CD004004FAAD5 /* SearchView.swift in Sources */,
 				32879D7F2B19EEB6000032EF /* MainView.swift in Sources */,
 				32E3D1BD2B4CCFE0004FAAD5 /* GroupView.swift in Sources */,
+				32BC6D4D2B51473600870126 /* GroupLiveKey.swift in Sources */,
 				32879D4F2B19ED53000032EF /* PrayerRequestCollectorApp.swift in Sources */,
+				32BC6D5D2B5150C100870126 /* GroupRepository.swift in Sources */,
+				32BC6D612B5159EB00870126 /* GroupDetailReducer.swift in Sources */,
 				32E3D1CE2B4CDCFA004FAAD5 /* MainViewReducer.swift in Sources */,
+				32BC6D5B2B514BE600870126 /* GroupRepositoryMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

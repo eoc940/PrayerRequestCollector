@@ -10,7 +10,8 @@ import ComposableArchitecture
 
 struct WriteView: View {
     let store: StoreOf<WriteViewReducr>
-    let viewStore: ViewStoreOf<WriteViewReducr>
+    @ObservedObject
+    var viewStore: ViewStoreOf<WriteViewReducr>
     
     init(store: StoreOf<WriteViewReducr>) {
         self.store = store
