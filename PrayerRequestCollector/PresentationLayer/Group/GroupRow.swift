@@ -22,7 +22,11 @@ struct GroupRow: View {
     
     var body: some View {
         VStack {
-            Text(viewStore.group.name)
+            HStack {
+                Text(viewStore.group.name)
+                Spacer()
+                Text(viewStore.memberCount)
+            }
         }
     }
 }

@@ -1,5 +1,5 @@
 //
-//  GroupRowReducer.swift
+//  GroupDetailReducer.swift
 //  PrayerRequestCollector
 //
 //  Created by Khg Dev on 2024/01/12.
@@ -8,11 +8,9 @@
 import Foundation
 import ComposableArchitecture
 
-struct GroupRowReducer: Reducer {
+struct GroupDetailReducer: Reducer {
     
-    struct State: Equatable, Identifiable {
-        
-        
+    struct State: Equatable {
         let group: Group
         
         init(group: Group) {
@@ -39,6 +37,7 @@ struct GroupRowReducer: Reducer {
             default:
                 return .none
             }
+            
         }
     }
 }
