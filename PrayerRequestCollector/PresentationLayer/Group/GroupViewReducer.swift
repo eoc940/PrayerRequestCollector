@@ -12,12 +12,30 @@ struct GroupViewReducer: Reducer {
     
     @Dependency(\.groupClient) var groupClient
 
+    struct Path: Reducer {
+        enum State: Equatable {
+            case new(GroupNewReducer.State)
+            case detail(GroupDetailReducer.State)
+        }
+        
+        enum Action: Equatable {
+            case new(GroupNewReducer.Action)
+            case detail(GroupDetailReducer.Action)
+        }
+        
+        var body: some ReducerOf<Self> {
+            Scope(state: /State.new, action: /Action.new) {
+                GroupNewReducer()
+            }
+            Scope(state: /State.detail, action: /Action.detail) {
+                GroupDetailReducer()
+            }
+        }
+    }
     
     struct State: Equatable {
         var rowReducers: IdentifiedArrayOf<GroupRowReducer.State>
-        var path = StackState<GroupDetailReducer.State>()
-        //    @PresentationState var destination: Destination.State?
-            
+        var path = StackState<Path.State>()
     }
     
     enum Action: Equatable {
@@ -25,13 +43,12 @@ struct GroupViewReducer: Reducer {
         enum ViewEvent: Equatable {
             case onAppear
         }
-//        case destination(PresentationAction<Destination.Action>)
-        case path(StackAction<GroupDetailReducer.State, GroupDetailReducer.Action>)
+
+        case path(StackAction<Path.State, Path.Action>)
         case viewEvent(ViewEvent)
         case getGroups(TaskResult<[Group]>)
         case tapAddButton
         case rowReducerAction(id: GroupRowReducer.State.ID, action: GroupRowReducer.Action)
-        case pushToDetail(Group)
     }
     
     var body: some ReducerOf<Self> {
@@ -46,24 +63,19 @@ struct GroupViewReducer: Reducer {
                     ))
                 }
             case .tapAddButton:
-                
+                state.path.append(.new(.init()))
                 return .none
             case let .getGroups(.success(groups)):
                 state.rowReducers = .init(IdentifiedArray(uniqueElements: groups.map { .init(group: $0) }
                 ))
                     
                 return .none
-            case .path:
-                return .none
             default:
                 return .none
             }
         }
-//        .ifLet(\.$destination, action: \.destination) {
-//            Destination()
-//        }
         .forEach(\.path, action: /Action.path) {
-            GroupDetailReducer()
+            Path()
         }
     }
 }

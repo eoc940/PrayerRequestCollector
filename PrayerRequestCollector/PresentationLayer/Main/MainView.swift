@@ -18,7 +18,7 @@ struct MainView: View {
             return state
         })
         
-        UITabBar.appearance().backgroundColor = UIColor.lightGray.withAlphaComponent(0.1)
+        UITabBar.appearance().backgroundColor = UIColor.yellow.withAlphaComponent(0.1)
     }
     
     @State private var selectedTab = 0

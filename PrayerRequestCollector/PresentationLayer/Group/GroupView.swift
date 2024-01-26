@@ -23,50 +23,71 @@ struct GroupView: View {
     var body: some View {
         VStack {
             groupList
+            
         }
+        .background(Color.gray.opacity(0.1))
         .onAppear {
             viewStore.send(.viewEvent(.onAppear))
         }
     }
     
     var groupList: some View {
-        NavigationStackStore(self.store.scope(state: \.path, action: { .path($0) })) {
-            Text("모임 관리")
-                .font(Font.headline.bold())
-            VStack {
+        NavigationStackStore(self.store.scope(state: \.path, action: { childAction in
+                .path(childAction)
+        })) {
+            ZStack {
                 List {
                     ForEachStore(self.store.scope(state: \.rowReducers, action: GroupViewReducer.Action.rowReducerAction(id: action:))) { store in
-                        NavigationLink(state: GroupDetailReducer.State(group: store.withState({ state in
-                            state.group
-                        }))) {
+                        let rowState = store.withState { $0 }
+                        // i don't know here1
+                        NavigationLink(state: GroupViewReducer.Path.State.detail(.init(group: rowState.group))) {
                             GroupRow(store: store)
-
                         }
-                        
+
                     }
                 }
+                .background(Color.gray.opacity(0.1))
+                .scrollContentBackground(.hidden)
                 
-                Button(action: {
-                    viewStore.send(.tapAddButton)
-                }, label: {
-                    Text("추가")
-                })
+                groupAddButton
+                    
             }
         } destination: { state in
             switch state {
-                
-            default:
-                return GroupDetailView(store: state)
+            case .new:
+                CaseLet(
+                    /GroupViewReducer.Path.State.new,
+                     action: GroupViewReducer.Path.Action.new,
+                     then: GroupNewView.init(store:)
+                )
+            case .detail:
+                CaseLet(
+                    /GroupViewReducer.Path.State.detail,
+                     action: GroupViewReducer.Path.Action.detail,
+                     then: GroupDetailView.init(store:)
+                )
             }
         }
-        
+    }
+    
+    var groupAddButton: some View {
+        VStack {
+            Spacer()
+            HStack {
+                Spacer()
+                Button(action: {
+                    // i don't know here2
+                    viewStore.send(.tapAddButton)
+                }, label: {
+                    Image(systemName: "plus")
+                        .frame(width: 40, height: 40) // 이미지 크기 설정
+                        .clipShape(Circle()) // 이미지를 원 모양으로 클리핑
+                        .overlay(Circle().stroke(Color.white)) // 원 주위에 흰색 테두리 추가
+                        .shadow(radius: 5) // 그림자 효과 추가
+                        .padding(.bottom, 20)
+                        .padding(.trailing, 20)
+                })
+            }
+        }
     }
 }
-
-//struct GroupView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        GroupView(store: Store(initialState: GroupViewReducer.State(rowReducers: .init()), reducer: {
-//            GroupViewReducer()
-//        }))
-//    }
-//}

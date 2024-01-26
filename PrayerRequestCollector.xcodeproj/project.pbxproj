@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32726D362B5F49550083C2F8 /* GroupNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32726D352B5F49550083C2F8 /* GroupNewView.swift */; };
+		32726D382B5F495E0083C2F8 /* GroupNewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32726D372B5F495E0083C2F8 /* GroupNewReducer.swift */; };
 		32879D4F2B19ED53000032EF /* PrayerRequestCollectorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32879D4E2B19ED53000032EF /* PrayerRequestCollectorApp.swift */; };
 		32879D532B19ED53000032EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32879D522B19ED53000032EF /* Assets.xcassets */; };
 		32879D562B19ED53000032EF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32879D552B19ED53000032EF /* Preview Assets.xcassets */; };
@@ -55,6 +57,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		32726D352B5F49550083C2F8 /* GroupNewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupNewView.swift; sourceTree = "<group>"; };
+		32726D372B5F495E0083C2F8 /* GroupNewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupNewReducer.swift; sourceTree = "<group>"; };
 		32879D4B2B19ED53000032EF /* PrayerRequestCollector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrayerRequestCollector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32879D4E2B19ED53000032EF /* PrayerRequestCollectorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerRequestCollectorApp.swift; sourceTree = "<group>"; };
 		32879D522B19ED53000032EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -114,6 +118,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		32726D332B5F491D0083C2F8 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				32BC6D602B5159EB00870126 /* GroupDetailReducer.swift */,
+				32BC6D5E2B5159E000870126 /* GroupDetailView.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		32726D342B5F49250083C2F8 /* New */ = {
+			isa = PBXGroup;
+			children = (
+				32726D352B5F49550083C2F8 /* GroupNewView.swift */,
+				32726D372B5F495E0083C2F8 /* GroupNewReducer.swift */,
+			);
+			path = New;
+			sourceTree = "<group>";
+		};
 		32879D422B19ED53000032EF = {
 			isa = PBXGroup;
 			children = (
@@ -264,12 +286,12 @@
 		32E3D1C22B4CD30F004FAAD5 /* Group */ = {
 			isa = PBXGroup;
 			children = (
+				32726D342B5F49250083C2F8 /* New */,
+				32726D332B5F491D0083C2F8 /* Detail */,
 				32E3D1BC2B4CCFE0004FAAD5 /* GroupView.swift */,
 				32E3D1C52B4CD3F5004FAAD5 /* GroupViewReducer.swift */,
 				32BC6D4A2B51472F00870126 /* GroupClient.swift */,
 				32BC6D4C2B51473600870126 /* GroupLiveKey.swift */,
-				32BC6D5E2B5159E000870126 /* GroupDetailView.swift */,
-				32BC6D602B5159EB00870126 /* GroupDetailReducer.swift */,
 				32BC6D622B515DBE00870126 /* GroupRow.swift */,
 				32BC6D642B515DDF00870126 /* GroupRowReducer.swift */,
 			);
@@ -448,6 +470,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				32879D582B19ED53000032EF /* Persistence.swift in Sources */,
+				32726D382B5F495E0083C2F8 /* GroupNewReducer.swift in Sources */,
 				32BC6D5F2B5159E000870126 /* GroupDetailView.swift in Sources */,
 				32BC6D632B515DBE00870126 /* GroupRow.swift in Sources */,
 				32879D5B2B19ED53000032EF /* PrayerRequestCollector.xcdatamodeld in Sources */,
@@ -461,6 +484,7 @@
 				32E3D1BF2B4CCFF7004FAAD5 /* WriteView.swift in Sources */,
 				32E3D1C62B4CD3F5004FAAD5 /* GroupViewReducer.swift in Sources */,
 				32E3D1C12B4CD004004FAAD5 /* SearchView.swift in Sources */,
+				32726D362B5F49550083C2F8 /* GroupNewView.swift in Sources */,
 				32879D7F2B19EEB6000032EF /* MainView.swift in Sources */,
 				32E3D1BD2B4CCFE0004FAAD5 /* GroupView.swift in Sources */,
 				32BC6D4D2B51473600870126 /* GroupLiveKey.swift in Sources */,
