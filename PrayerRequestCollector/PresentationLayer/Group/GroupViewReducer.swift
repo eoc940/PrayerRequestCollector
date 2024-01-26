@@ -70,6 +70,15 @@ struct GroupViewReducer: Reducer {
                 ))
                     
                 return .none
+            case .path(let action):
+                switch action {
+                case .element(id: _, action: .new(.popGroupNewView)):
+                    _ = state.path.popLast()
+                    return .none
+                    
+                default:
+                    return .none
+                }
             default:
                 return .none
             }

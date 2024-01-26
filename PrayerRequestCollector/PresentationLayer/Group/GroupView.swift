@@ -23,12 +23,9 @@ struct GroupView: View {
     var body: some View {
         VStack {
             groupList
-            
         }
         .background(Color.gray.opacity(0.1))
-        .onAppear {
-            viewStore.send(.viewEvent(.onAppear))
-        }
+        
     }
     
     var groupList: some View {
@@ -88,6 +85,9 @@ struct GroupView: View {
                         .padding(.trailing, 20)
                 })
             }
+        }
+        .onAppear { // root view에 onappear를 설정하면 navigation pop된 이후 안불림
+            viewStore.send(.viewEvent(.onAppear))
         }
     }
 }

@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		32726D362B5F49550083C2F8 /* GroupNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32726D352B5F49550083C2F8 /* GroupNewView.swift */; };
 		32726D382B5F495E0083C2F8 /* GroupNewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32726D372B5F495E0083C2F8 /* GroupNewReducer.swift */; };
+		32726D3B2B6365E80083C2F8 /* MemberRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32726D3A2B6365E80083C2F8 /* MemberRepositoryProtocol.swift */; };
+		32726D3D2B63661F0083C2F8 /* MemberRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32726D3C2B63661F0083C2F8 /* MemberRepositoryMock.swift */; };
+		32726D3F2B6368400083C2F8 /* MemberRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32726D3E2B6368400083C2F8 /* MemberRepository.swift */; };
 		32879D4F2B19ED53000032EF /* PrayerRequestCollectorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32879D4E2B19ED53000032EF /* PrayerRequestCollectorApp.swift */; };
 		32879D532B19ED53000032EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32879D522B19ED53000032EF /* Assets.xcassets */; };
 		32879D562B19ED53000032EF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32879D552B19ED53000032EF /* Preview Assets.xcassets */; };
@@ -59,6 +62,9 @@
 /* Begin PBXFileReference section */
 		32726D352B5F49550083C2F8 /* GroupNewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupNewView.swift; sourceTree = "<group>"; };
 		32726D372B5F495E0083C2F8 /* GroupNewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupNewReducer.swift; sourceTree = "<group>"; };
+		32726D3A2B6365E80083C2F8 /* MemberRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberRepositoryProtocol.swift; sourceTree = "<group>"; };
+		32726D3C2B63661F0083C2F8 /* MemberRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberRepositoryMock.swift; sourceTree = "<group>"; };
+		32726D3E2B6368400083C2F8 /* MemberRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberRepository.swift; sourceTree = "<group>"; };
 		32879D4B2B19ED53000032EF /* PrayerRequestCollector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrayerRequestCollector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32879D4E2B19ED53000032EF /* PrayerRequestCollectorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerRequestCollectorApp.swift; sourceTree = "<group>"; };
 		32879D522B19ED53000032EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -134,6 +140,16 @@
 				32726D372B5F495E0083C2F8 /* GroupNewReducer.swift */,
 			);
 			path = New;
+			sourceTree = "<group>";
+		};
+		32726D392B6365B80083C2F8 /* Member */ = {
+			isa = PBXGroup;
+			children = (
+				32726D3A2B6365E80083C2F8 /* MemberRepositoryProtocol.swift */,
+				32726D3C2B63661F0083C2F8 /* MemberRepositoryMock.swift */,
+				32726D3E2B6368400083C2F8 /* MemberRepository.swift */,
+			);
+			path = Member;
 			sourceTree = "<group>";
 		};
 		32879D422B19ED53000032EF = {
@@ -262,6 +278,7 @@
 		32BC6D572B514BAD00870126 /* Group */ = {
 			isa = PBXGroup;
 			children = (
+				32726D392B6365B80083C2F8 /* Member */,
 				32BC6D552B514BA600870126 /* GroupRepositoryProtocol.swift */,
 				32BC6D5A2B514BE600870126 /* GroupRepositoryMock.swift */,
 				32BC6D5C2B5150C100870126 /* GroupRepository.swift */,
@@ -471,6 +488,7 @@
 			files = (
 				32879D582B19ED53000032EF /* Persistence.swift in Sources */,
 				32726D382B5F495E0083C2F8 /* GroupNewReducer.swift in Sources */,
+				32726D3F2B6368400083C2F8 /* MemberRepository.swift in Sources */,
 				32BC6D5F2B5159E000870126 /* GroupDetailView.swift in Sources */,
 				32BC6D632B515DBE00870126 /* GroupRow.swift in Sources */,
 				32879D5B2B19ED53000032EF /* PrayerRequestCollector.xcdatamodeld in Sources */,
@@ -486,8 +504,10 @@
 				32E3D1C12B4CD004004FAAD5 /* SearchView.swift in Sources */,
 				32726D362B5F49550083C2F8 /* GroupNewView.swift in Sources */,
 				32879D7F2B19EEB6000032EF /* MainView.swift in Sources */,
+				32726D3D2B63661F0083C2F8 /* MemberRepositoryMock.swift in Sources */,
 				32E3D1BD2B4CCFE0004FAAD5 /* GroupView.swift in Sources */,
 				32BC6D4D2B51473600870126 /* GroupLiveKey.swift in Sources */,
+				32726D3B2B6365E80083C2F8 /* MemberRepositoryProtocol.swift in Sources */,
 				32879D4F2B19ED53000032EF /* PrayerRequestCollectorApp.swift in Sources */,
 				32BC6D5D2B5150C100870126 /* GroupRepository.swift in Sources */,
 				32BC6D612B5159EB00870126 /* GroupDetailReducer.swift in Sources */,

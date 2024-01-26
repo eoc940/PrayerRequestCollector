@@ -9,4 +9,5 @@ import Foundation
 
 protocol GroupRepositoryProtocol {
     func getGroups() -> [Group]
+    func addGroup(_ group: Group) -> [Group]
 }

@@ -19,7 +19,10 @@ extension GroupClient: DependencyKey {
     static var liveValue: GroupClient {
         GroupClient(
             getGroups: {
-                GroupRepositoryMock().getGroups()
+                GroupRepositoryMock.instance.getGroups()
+            },
+            addGroup: { group in
+                GroupRepositoryMock.instance.addGroup(group)
             }
         )
     }
@@ -27,7 +30,10 @@ extension GroupClient: DependencyKey {
     static var previewValue: GroupClient {
         GroupClient(
             getGroups: {
-                GroupRepositoryMock().getGroups()
+                GroupRepositoryMock.instance.getGroups()
+            },
+            addGroup: { group in
+                GroupRepositoryMock.instance.addGroup(group)
             }
         )
     }
