@@ -23,6 +23,9 @@ extension GroupClient: DependencyKey {
             },
             addGroup: { group in
                 GroupRepositoryMock.instance.addGroup(group)
+            },
+            getAllMembers: {
+                MemberRepositoryMock.instance.getAllMember()
             }
         )
     }
@@ -34,6 +37,9 @@ extension GroupClient: DependencyKey {
             },
             addGroup: { group in
                 GroupRepositoryMock.instance.addGroup(group)
+            },
+            getAllMembers: {
+                MemberRepositoryMock.instance.getAllMember()
             }
         )
     }

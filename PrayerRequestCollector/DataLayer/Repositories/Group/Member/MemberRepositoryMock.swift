@@ -8,6 +8,10 @@
 import Foundation
 
 class MemberRepositoryMock: MemberRepositoryProtocol {
+    static let instance = MemberRepositoryMock()
+    
+    private init() {}
+    
     private var members: [Member] = [
         Member(name: "한솔"),
         Member(name: "예은"),

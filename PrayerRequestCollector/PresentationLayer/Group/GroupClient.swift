@@ -10,4 +10,5 @@ import Foundation
 struct GroupClient {
     var getGroups: @Sendable () async throws -> [Group]
     var addGroup: @Sendable (_ group: Group) async throws -> [Group]
+    var getAllMembers: @Sendable () async throws -> [Member]
 }

@@ -35,8 +35,12 @@ struct GroupNewView: View {
                 groupNameTextField
                 addGroupButton
             }
+            .padding(.horizontal, 50)
+            .padding(.vertical, 20)
         }
-        
+        .onAppear {
+            viewStore.send(.viewEvent(.onAppear))
+        }
     }
     
     var memberNameTextField: some View {
@@ -80,10 +84,9 @@ struct GroupNewView: View {
             Button(action: {
                 viewStore.send(.tapAddGroupButton)
             }, label: {
-                Text("모임 추가하기")
+                Text("모임 추가")
             })
             .buttonStyle(.bordered)
         }
-        .padding(.all, 20)
     }
 }
