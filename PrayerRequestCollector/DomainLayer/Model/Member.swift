@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Member: Identifiable {
+struct Member: Identifiable, Hashable {
     let id: String = UUID().uuidString
     let name: String
     

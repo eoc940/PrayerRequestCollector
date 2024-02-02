@@ -40,7 +40,7 @@ struct GroupView: View {
                         NavigationLink(state: GroupViewReducer.Path.State.detail(.init(group: rowState.group))) {
                             GroupRow(store: store)
                         }
-
+                        
                     }
                 }
                 .background(Color.gray.opacity(0.1))

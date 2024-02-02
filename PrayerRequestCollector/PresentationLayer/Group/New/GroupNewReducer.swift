@@ -19,6 +19,10 @@ struct GroupNewReducer: Reducer {
         var savedInputGroupString: String = ""
         var savedAllMembers: [Member] = []
         var members: [Member] = []
+        
+        var isAddGroupButtonDisabled: Bool {
+            members.isEmpty || savedInputGroupString.trimmingCharacters(in: .whitespaces).isEmpty
+        }
     }
     
     enum Action: BindableAction, Equatable {
@@ -60,6 +64,9 @@ struct GroupNewReducer: Reducer {
                 let name = state.savedInputMemberString
                 // validation 로직 -> 같은 멤버면 alert, 다른 모임에 있다면 확인하는 절차 추가
                 let trimming = name.trimmingCharacters(in: .whitespaces)
+                
+                let isNotEmptyString = !name.isEmpty
+                
                 let isAddEnableInAllGroup = state.savedAllMembers
                     .map { $0.name }
                     .filter { name in
@@ -74,7 +81,7 @@ struct GroupNewReducer: Reducer {
                     }
                     .isEmpty
                 
-                if isAddEnableInAllGroup && isAddEnableInsideGroup {
+                if isNotEmptyString && isAddEnableInAllGroup && isAddEnableInsideGroup {
                     state.members.append(Member(name: name))
                 } else {
                     // 다른 모임에 있다면 확인하는 절차 추가

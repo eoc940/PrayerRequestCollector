@@ -87,6 +87,7 @@ struct GroupNewView: View {
                 Text("모임 추가")
             })
             .buttonStyle(.bordered)
+            .disabled(viewStore.isAddGroupButtonDisabled)
         }
     }
 }

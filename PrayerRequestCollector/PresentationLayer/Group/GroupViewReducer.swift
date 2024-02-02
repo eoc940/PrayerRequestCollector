@@ -75,7 +75,10 @@ struct GroupViewReducer: Reducer {
                 case .element(id: _, action: .new(.popGroupNewView)):
                     _ = state.path.popLast()
                     return .none
-                    
+                case .element(id: _, action: .detail(.popGroupDetailView)):
+                    // popTo(id)를 사용해봐도 좋을듯
+                    _ = state.path.popLast()
+                    return .none
                 default:
                     return .none
                 }
