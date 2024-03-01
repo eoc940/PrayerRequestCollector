@@ -22,8 +22,20 @@ struct HomeView: View {
     
     var body: some View {
         VStack {
-            
+            prayerListView
+        }
+        .onAppear {
+            viewStore.send(.viewEvent(.onAppear))
         }
     }
 
+    var prayerListView: some View {
+        VStack {
+            List {
+                ForEachStore(self.store.scope(state: \.rowReducers, action: HomeViewReducer.Action.rowrReducerAction(id: action:))) { store in
+                    PrayerRow(store: store)
+                }
+            }
+        }
+    }
 }

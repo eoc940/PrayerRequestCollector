@@ -38,7 +38,7 @@ extension MainView {
         VStack {
             switch viewStore.presentedScreen {
             case .home:
-                HomeView(store: .init(initialState: HomeViewReducer.State(), reducer: {
+                HomeView(store: .init(initialState: HomeViewReducer.State(rowReducers: .init()), reducer: {
                     HomeViewReducer()
                 }))
             case .group:

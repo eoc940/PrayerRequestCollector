@@ -16,6 +16,8 @@
 		32400A172B91D9F800C2D639 /* SearchRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32400A162B91D9F800C2D639 /* SearchRepositoryMock.swift */; };
 		32400A192B91DCAE00C2D639 /* PrayerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32400A182B91DCAE00C2D639 /* PrayerRow.swift */; };
 		32400A1C2B91DDB700C2D639 /* PrayerRowReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32400A1B2B91DDB700C2D639 /* PrayerRowReducer.swift */; };
+		32400A212B91E3CD00C2D639 /* HomeClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32400A202B91E3CD00C2D639 /* HomeClient.swift */; };
+		32400A232B91E3D900C2D639 /* HomeLiveKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32400A222B91E3D900C2D639 /* HomeLiveKey.swift */; };
 		32726D362B5F49550083C2F8 /* GroupNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32726D352B5F49550083C2F8 /* GroupNewView.swift */; };
 		32726D382B5F495E0083C2F8 /* GroupNewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32726D372B5F495E0083C2F8 /* GroupNewReducer.swift */; };
 		328262172B7AF2A800D16C9E /* WriteGroupRowReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328262162B7AF2A800D16C9E /* WriteGroupRowReducer.swift */; };
@@ -77,6 +79,8 @@
 		32400A162B91D9F800C2D639 /* SearchRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoryMock.swift; sourceTree = "<group>"; };
 		32400A182B91DCAE00C2D639 /* PrayerRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerRow.swift; sourceTree = "<group>"; };
 		32400A1B2B91DDB700C2D639 /* PrayerRowReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerRowReducer.swift; sourceTree = "<group>"; };
+		32400A202B91E3CD00C2D639 /* HomeClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeClient.swift; sourceTree = "<group>"; };
+		32400A222B91E3D900C2D639 /* HomeLiveKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLiveKey.swift; sourceTree = "<group>"; };
 		32726D352B5F49550083C2F8 /* GroupNewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupNewView.swift; sourceTree = "<group>"; };
 		32726D372B5F495E0083C2F8 /* GroupNewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupNewReducer.swift; sourceTree = "<group>"; };
 		328262162B7AF2A800D16C9E /* WriteGroupRowReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteGroupRowReducer.swift; sourceTree = "<group>"; };
@@ -151,6 +155,7 @@
 		32400A0B2B91A5C900C2D639 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				32400A1F2B91E3BE00C2D639 /* Client */,
 				32400A0C2B91A5E400C2D639 /* HomeView.swift */,
 				32400A0E2B91A5EC00C2D639 /* HomeViewReducer.swift */,
 			);
@@ -164,6 +169,33 @@
 				32400A1B2B91DDB700C2D639 /* PrayerRowReducer.swift */,
 			);
 			path = PrayerRow;
+			sourceTree = "<group>";
+		};
+		32400A1D2B91E39F00C2D639 /* Row */ = {
+			isa = PBXGroup;
+			children = (
+				32BC6D642B515DDF00870126 /* GroupRowReducer.swift */,
+				32BC6D622B515DBE00870126 /* GroupRow.swift */,
+			);
+			path = Row;
+			sourceTree = "<group>";
+		};
+		32400A1E2B91E3A800C2D639 /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				32BC6D4A2B51472F00870126 /* GroupClient.swift */,
+				32BC6D4C2B51473600870126 /* GroupLiveKey.swift */,
+			);
+			path = Client;
+			sourceTree = "<group>";
+		};
+		32400A1F2B91E3BE00C2D639 /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				32400A202B91E3CD00C2D639 /* HomeClient.swift */,
+				32400A222B91E3D900C2D639 /* HomeLiveKey.swift */,
+			);
+			path = Client;
 			sourceTree = "<group>";
 		};
 		32726D332B5F491D0083C2F8 /* Detail */ = {
@@ -349,14 +381,12 @@
 		32E3D1C22B4CD30F004FAAD5 /* Group */ = {
 			isa = PBXGroup;
 			children = (
+				32400A1E2B91E3A800C2D639 /* Client */,
+				32400A1D2B91E39F00C2D639 /* Row */,
 				32726D342B5F49250083C2F8 /* New */,
 				32726D332B5F491D0083C2F8 /* Detail */,
 				32E3D1BC2B4CCFE0004FAAD5 /* GroupView.swift */,
 				32E3D1C52B4CD3F5004FAAD5 /* GroupViewReducer.swift */,
-				32BC6D4A2B51472F00870126 /* GroupClient.swift */,
-				32BC6D4C2B51473600870126 /* GroupLiveKey.swift */,
-				32BC6D622B515DBE00870126 /* GroupRow.swift */,
-				32BC6D642B515DDF00870126 /* GroupRowReducer.swift */,
 			);
 			path = Group;
 			sourceTree = "<group>";
@@ -553,6 +583,7 @@
 				32400A172B91D9F800C2D639 /* SearchRepositoryMock.swift in Sources */,
 				32BC6D562B514BA600870126 /* GroupRepositoryProtocol.swift in Sources */,
 				328262192B7AF2B300D16C9E /* WriteGroupRow.swift in Sources */,
+				32400A212B91E3CD00C2D639 /* HomeClient.swift in Sources */,
 				32E3D1BF2B4CCFF7004FAAD5 /* WriteView.swift in Sources */,
 				32400A0F2B91A5EC00C2D639 /* HomeViewReducer.swift in Sources */,
 				32400A0A2B8EC43C00C2D639 /* View.swift in Sources */,
@@ -563,6 +594,7 @@
 				328262172B7AF2A800D16C9E /* WriteGroupRowReducer.swift in Sources */,
 				32E3D1BD2B4CCFE0004FAAD5 /* GroupView.swift in Sources */,
 				32BC6D4D2B51473600870126 /* GroupLiveKey.swift in Sources */,
+				32400A232B91E3D900C2D639 /* HomeLiveKey.swift in Sources */,
 				32879D4F2B19ED53000032EF /* PrayerRequestCollectorApp.swift in Sources */,
 				32BC6D5D2B5150C100870126 /* GroupRepository.swift in Sources */,
 				32400A1C2B91DDB700C2D639 /* PrayerRowReducer.swift in Sources */,

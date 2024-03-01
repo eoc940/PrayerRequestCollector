@@ -10,27 +10,45 @@ import ComposableArchitecture
 
 struct HomeViewReducer: Reducer {
     
+    @Dependency(\.homeClient) var homeClient
+    
     struct State: Equatable {
-        
+        var rowReducers: IdentifiedArrayOf<PrayerRowReducer.State>
     }
     
     enum Action: Equatable {
-        enum ViewEvent {
-            case onAppear
-        }
-        
         case viewEvent(ViewEvent)
-        
+        case getPrayers(TaskResult<[Prayer]>)
+        case rowrReducerAction(id: PrayerRowReducer.State.ID, action: PrayerRowReducer.Action)
     }
     
     var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
+            case .viewEvent(.onAppear):
+                return .run { send in
+                    await send(.getPrayers(await TaskResult {
+                        try await self.homeClient.getRandomPrayers()
+                    }))
+                }
+            case let .getPrayers(.success(prayers)):
                 
+                state.rowReducers = .init(IdentifiedArray(uniqueElements: prayers.map {
+                    .init(prayer: $0) }
+                ))
+                
+                return .none
             default:
                 return .none
             }
         }
     }
     
+}
+
+// MARK: - Action
+extension HomeViewReducer.Action {
+    enum ViewEvent {
+        case onAppear
+    }
 }
