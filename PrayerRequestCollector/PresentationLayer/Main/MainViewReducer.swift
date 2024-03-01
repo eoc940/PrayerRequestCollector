@@ -18,19 +18,15 @@ struct MainViewReducer: Reducer {
     }
     
     enum Action: Equatable {
-        enum ViewEvent {
-            case onAppear
-        }
-        
         case viewEvent(ViewEvent)
-        case tapMenuButton
+        case tapMenuButton(CoordinateAction)
         case tapDimmedBackground
     }
     
     var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
-            case .tapMenuButton:
+            case let .tapMenuButton(coordinateAction):
                 let changedMenuSelectingMode: State.MenuSelectingMode = {
                     switch state.menuButtonMode {
                     case .selecting:
@@ -39,8 +35,24 @@ struct MainViewReducer: Reducer {
                         return .selecting
                     }
                 }()
-
+                
                 state.menuButtonMode = changedMenuSelectingMode
+                
+                let presentedScreen: State.PresentedScreen = {
+                    switch coordinateAction {
+                    case .home:
+                        return .home
+                    case .group:
+                        return .group
+                    case .write:
+                        return .write
+                    case .search:
+                        return .search
+                    }
+                }()
+                
+                state.presentedScreen = presentedScreen
+                
                 return .none
             case .tapDimmedBackground:
                 if state.menuButtonMode == .selecting {
@@ -54,6 +66,21 @@ struct MainViewReducer: Reducer {
     }
 }
 
+// MARK: - Action
+extension MainViewReducer.Action {
+    enum ViewEvent {
+        case onAppear
+    }
+    
+    enum CoordinateAction {
+        case home
+        case group
+        case write
+        case search
+    }
+}
+
+// MARK: - State
 extension MainViewReducer.State {
     enum MenuSelectingMode: Equatable {
         case selecting

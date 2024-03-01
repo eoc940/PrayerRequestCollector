@@ -10,6 +10,7 @@
 		32400A0A2B8EC43C00C2D639 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32400A092B8EC43C00C2D639 /* View.swift */; };
 		32400A0D2B91A5E400C2D639 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32400A0C2B91A5E400C2D639 /* HomeView.swift */; };
 		32400A0F2B91A5EC00C2D639 /* HomeViewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32400A0E2B91A5EC00C2D639 /* HomeViewReducer.swift */; };
+		32400A112B91B7B600C2D639 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32400A102B91B7B600C2D639 /* MenuButton.swift */; };
 		32726D362B5F49550083C2F8 /* GroupNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32726D352B5F49550083C2F8 /* GroupNewView.swift */; };
 		32726D382B5F495E0083C2F8 /* GroupNewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32726D372B5F495E0083C2F8 /* GroupNewReducer.swift */; };
 		328262172B7AF2A800D16C9E /* WriteGroupRowReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328262162B7AF2A800D16C9E /* WriteGroupRowReducer.swift */; };
@@ -65,6 +66,7 @@
 		32400A092B8EC43C00C2D639 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		32400A0C2B91A5E400C2D639 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		32400A0E2B91A5EC00C2D639 /* HomeViewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewReducer.swift; sourceTree = "<group>"; };
+		32400A102B91B7B600C2D639 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
 		32726D352B5F49550083C2F8 /* GroupNewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupNewView.swift; sourceTree = "<group>"; };
 		32726D372B5F495E0083C2F8 /* GroupNewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupNewReducer.swift; sourceTree = "<group>"; };
 		328262162B7AF2A800D16C9E /* WriteGroupRowReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteGroupRowReducer.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 		328262102B7AEB5F00D16C9E /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				32400A102B91B7B600C2D639 /* MenuButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -510,6 +513,7 @@
 			files = (
 				32879D582B19ED53000032EF /* Persistence.swift in Sources */,
 				32400A0D2B91A5E400C2D639 /* HomeView.swift in Sources */,
+				32400A112B91B7B600C2D639 /* MenuButton.swift in Sources */,
 				32726D382B5F495E0083C2F8 /* GroupNewReducer.swift in Sources */,
 				32BC6D5F2B5159E000870126 /* GroupDetailView.swift in Sources */,
 				32BC6D632B515DBE00870126 /* GroupRow.swift in Sources */,

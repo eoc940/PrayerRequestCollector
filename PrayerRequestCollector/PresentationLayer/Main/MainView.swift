@@ -27,7 +27,7 @@ struct MainView: View {
             
             dimmedView
             
-            menuButton
+            menuButtonsView
 
         }
     }
@@ -70,58 +70,41 @@ extension MainView {
         
     }
     
-    var menuButton: some View {
+    var menuButtonsView: some View {
         VStack {
             Spacer()
             HStack {
                 Spacer()
-                Button(action: {
-                    viewStore.send(.tapMenuButton)
-                }, label: {
-                    Image(systemName: "plus")
-                        .frame(width: 40, height: 40)
-                        .clipShape(Circle())
-                        .overlay(Circle().stroke(Color.white))
-                        .shadow(radius: 5)
-                        .padding(.bottom, 20)
-                        .padding(.trailing, 20)
-                })
+                VStack(spacing: 20) {
+                    if viewStore.menuButtonMode == .selecting {
+                        MenuButton(imageName: "pencil") {
+                            viewStore.send(.tapMenuButton(.group))
+                        }
+                        MenuButton(imageName: "pencil.circle") {
+                            viewStore.send(.tapMenuButton(.write))
+                        }
+                        MenuButton(imageName: "pencil.circle.fill") {
+                            viewStore.send(.tapMenuButton(.search))
+                        }
+                    }
+                    
+                    MenuButton(imageName: "plus") {
+                        viewStore.send(.tapMenuButton(.home))
+                    }
+                }
+                .padding(.bottom, 20)
+                .padding(.trailing, 20)
+                .transition(.move(edge: .bottom))
+                
+                
             }
+            
+            
         }
         .onAppear { // root view에 onappear를 설정하면 navigation pop된 이후 안불림
             //viewStore.send(.viewEvent(.onAppear))
         }
     }
-    
-//    var groupView: some View {
-//        GroupView(store: Store(initialState: GroupViewReducer.State(rowReducers: .init()), reducer: {
-//            GroupViewReducer()
-//        }))
-//        .tabItem {
-//            Image(systemName: "person.2.fill")
-//            Text("모임")
-//        }
-//    }
-//    
-//    var writeView: some View {
-//        WriteView(store: Store(initialState: WriteViewReducr.State(rowReducers: .init()), reducer: {
-//            WriteViewReducr()
-//        }))
-//        .tabItem {
-//            Image(systemName: "pencil.line")
-//            Text("작성")
-//        }
-//    }
-//    
-//    var searchView: some View {
-//        SearchView(store: Store(initialState: SearchViewReducer.State(), reducer: {
-//            SearchViewReducer()
-//        }))
-//        .tabItem {
-//            Image(systemName: "magnifyingglass")
-//            Text("검색")
-//        }
-//    }
 }
 
 struct MainView_Previews: PreviewProvider {
