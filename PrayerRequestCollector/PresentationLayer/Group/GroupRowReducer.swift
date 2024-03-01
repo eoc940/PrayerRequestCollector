@@ -11,20 +11,10 @@ import ComposableArchitecture
 struct GroupRowReducer: Reducer {
     
     struct State: Equatable, Identifiable {
-        
-        
         let group: Group
         
         init(group: Group) {
             self.group = group
-        }
-        
-        var id: String {
-            group.id
-        }
-        
-        var memberCount: String {
-            String(group.members.count)
         }
     }
     
@@ -40,5 +30,16 @@ struct GroupRowReducer: Reducer {
                 return .none
             }
         }
+    }
+}
+
+// MARK: - State
+extension GroupRowReducer.State {
+    var id: String {
+        group.id
+    }
+    
+    var memberCount: String {
+        String(group.members.count)
     }
 }

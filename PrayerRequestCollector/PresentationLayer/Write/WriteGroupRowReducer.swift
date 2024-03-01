@@ -15,18 +15,6 @@ struct WriteGroupRowReducer: Reducer {
         init(group: Group) {
             self.group = group
         }
-        
-        var id: String {
-            group.id
-        }
-        
-        var members: [Member] {
-            group.members
-        }
-        
-        var memberCount: String {
-            String(group.members.count)
-        }
     }
     
     enum Action: Equatable {
@@ -41,5 +29,20 @@ struct WriteGroupRowReducer: Reducer {
                 return .none
             }
         }
+    }
+}
+
+// MARK: - State
+extension WriteGroupRowReducer.State {
+    var id: String {
+        group.id
+    }
+    
+    var members: [Member] {
+        group.members
+    }
+    
+    var memberCount: String {
+        String(group.members.count)
     }
 }
