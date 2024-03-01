@@ -11,6 +11,9 @@
 		32400A0D2B91A5E400C2D639 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32400A0C2B91A5E400C2D639 /* HomeView.swift */; };
 		32400A0F2B91A5EC00C2D639 /* HomeViewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32400A0E2B91A5EC00C2D639 /* HomeViewReducer.swift */; };
 		32400A112B91B7B600C2D639 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32400A102B91B7B600C2D639 /* MenuButton.swift */; };
+		32400A132B91D90100C2D639 /* Prayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32400A122B91D90100C2D639 /* Prayer.swift */; };
+		32400A152B91D9EF00C2D639 /* SearchRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32400A142B91D9EF00C2D639 /* SearchRepositoryProtocol.swift */; };
+		32400A172B91D9F800C2D639 /* SearchRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32400A162B91D9F800C2D639 /* SearchRepositoryMock.swift */; };
 		32726D362B5F49550083C2F8 /* GroupNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32726D352B5F49550083C2F8 /* GroupNewView.swift */; };
 		32726D382B5F495E0083C2F8 /* GroupNewReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32726D372B5F495E0083C2F8 /* GroupNewReducer.swift */; };
 		328262172B7AF2A800D16C9E /* WriteGroupRowReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328262162B7AF2A800D16C9E /* WriteGroupRowReducer.swift */; };
@@ -67,6 +70,9 @@
 		32400A0C2B91A5E400C2D639 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		32400A0E2B91A5EC00C2D639 /* HomeViewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewReducer.swift; sourceTree = "<group>"; };
 		32400A102B91B7B600C2D639 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
+		32400A122B91D90100C2D639 /* Prayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prayer.swift; sourceTree = "<group>"; };
+		32400A142B91D9EF00C2D639 /* SearchRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoryProtocol.swift; sourceTree = "<group>"; };
+		32400A162B91D9F800C2D639 /* SearchRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoryMock.swift; sourceTree = "<group>"; };
 		32726D352B5F49550083C2F8 /* GroupNewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupNewView.swift; sourceTree = "<group>"; };
 		32726D372B5F495E0083C2F8 /* GroupNewReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupNewReducer.swift; sourceTree = "<group>"; };
 		328262162B7AF2A800D16C9E /* WriteGroupRowReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteGroupRowReducer.swift; sourceTree = "<group>"; };
@@ -285,6 +291,7 @@
 			children = (
 				32BC6D502B5149DC00870126 /* Member.swift */,
 				32BC6D522B5149E200870126 /* Group.swift */,
+				32400A122B91D90100C2D639 /* Prayer.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -319,6 +326,8 @@
 		32BC6D592B514BBD00870126 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				32400A142B91D9EF00C2D639 /* SearchRepositoryProtocol.swift */,
+				32400A162B91D9F800C2D639 /* SearchRepositoryMock.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -512,6 +521,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				32879D582B19ED53000032EF /* Persistence.swift in Sources */,
+				32400A152B91D9EF00C2D639 /* SearchRepositoryProtocol.swift in Sources */,
 				32400A0D2B91A5E400C2D639 /* HomeView.swift in Sources */,
 				32400A112B91B7B600C2D639 /* MenuButton.swift in Sources */,
 				32726D382B5F495E0083C2F8 /* GroupNewReducer.swift in Sources */,
@@ -522,8 +532,10 @@
 				32BC6D532B5149E200870126 /* Group.swift in Sources */,
 				32BC6D4B2B51472F00870126 /* GroupClient.swift in Sources */,
 				32E3D1CA2B4CD970004FAAD5 /* WriteViewReducer.swift in Sources */,
+				32400A132B91D90100C2D639 /* Prayer.swift in Sources */,
 				32BC6D512B5149DC00870126 /* Member.swift in Sources */,
 				32BC6D652B515DDF00870126 /* GroupRowReducer.swift in Sources */,
+				32400A172B91D9F800C2D639 /* SearchRepositoryMock.swift in Sources */,
 				32BC6D562B514BA600870126 /* GroupRepositoryProtocol.swift in Sources */,
 				328262192B7AF2B300D16C9E /* WriteGroupRow.swift in Sources */,
 				32E3D1BF2B4CCFF7004FAAD5 /* WriteView.swift in Sources */,
