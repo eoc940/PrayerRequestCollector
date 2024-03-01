@@ -10,66 +10,118 @@ import ComposableArchitecture
 
 struct MainView: View {
     let store: StoreOf<MainViewReducer>
-    let viewStore: ViewStoreOf<MainViewReducer>
+    @ObservedObject
+    var viewStore: ViewStoreOf<MainViewReducer>
     
     init(store: StoreOf<MainViewReducer>) {
         self.store = store
         self.viewStore = ViewStore(store, observe: { state in
             return state
         })
-        
-        UITabBar.appearance().backgroundColor = UIColor.yellow.withAlphaComponent(0.1)
     }
-    
-    @State private var selectedTab = 0
 
-    
     var body: some View {
-        tabbar
+        ZStack {
+            
+            presentedView
+            
+            dimmedView
+            
+            menuButton
+
+        }
     }
 }
 
 extension MainView {
-    var tabbar: some View {
-        TabView {
-            groupView
-            
-            writeView
-            
-            searchView
-        }
-        .tint(Color.orange)
-    }
-    
-    var groupView: some View {
-        GroupView(store: Store(initialState: GroupViewReducer.State(rowReducers: .init()), reducer: {
-            GroupViewReducer()
-        }))
-        .tabItem {
-            Image(systemName: "person.2.fill")
-            Text("모임")
-        }
-    }
-    
-    var writeView: some View {
-        WriteView(store: Store(initialState: WriteViewReducr.State(), reducer: {
-            WriteViewReducr()
-        }))
-        .tabItem {
-            Image(systemName: "pencil.line")
-            Text("작성")
+    var presentedView: some View {
+        VStack {
+            switch viewStore.presentedScreen {
+            case .home:
+                HomeView(store: .init(initialState: HomeViewReducer.State(), reducer: {
+                    HomeViewReducer()
+                }))
+            case .group:
+                GroupView(store: .init(initialState: GroupViewReducer.State(rowReducers: .init()), reducer: {
+                    GroupViewReducer()
+                }))
+            case .write:
+                WriteView(store: .init(initialState: WriteViewReducr.State(rowReducers: .init()), reducer: {
+                    WriteViewReducr()
+                }))
+            case .search:
+                SearchView(store: .init(initialState: SearchViewReducer.State(), reducer: {
+                    SearchViewReducer()
+                }))
+            }
         }
     }
     
-    var searchView: some View {
-        SearchView(store: Store(initialState: SearchViewReducer.State(), reducer: {
-            SearchViewReducer()
-        }))
-        .tabItem {
-            Image(systemName: "magnifyingglass")
-            Text("검색")
+    var dimmedView: some View {
+        VStack {
+            Color.black
+                .opacity(0.5)
+                .ignoresSafeArea(edges: .all)
+                .onTapGesture {
+                    viewStore.send(.tapDimmedBackground)
+                }
+        }
+        .hidden(viewStore.menuButtonMode == .notSelecting)
+        
+    }
+    
+    var menuButton: some View {
+        VStack {
+            Spacer()
+            HStack {
+                Spacer()
+                Button(action: {
+                    viewStore.send(.tapMenuButton)
+                }, label: {
+                    Image(systemName: "plus")
+                        .frame(width: 40, height: 40)
+                        .clipShape(Circle())
+                        .overlay(Circle().stroke(Color.white))
+                        .shadow(radius: 5)
+                        .padding(.bottom, 20)
+                        .padding(.trailing, 20)
+                })
+            }
+        }
+        .onAppear { // root view에 onappear를 설정하면 navigation pop된 이후 안불림
+            //viewStore.send(.viewEvent(.onAppear))
         }
     }
+    
+//    var groupView: some View {
+//        GroupView(store: Store(initialState: GroupViewReducer.State(rowReducers: .init()), reducer: {
+//            GroupViewReducer()
+//        }))
+//        .tabItem {
+//            Image(systemName: "person.2.fill")
+//            Text("모임")
+//        }
+//    }
+//    
+//    var writeView: some View {
+//        WriteView(store: Store(initialState: WriteViewReducr.State(rowReducers: .init()), reducer: {
+//            WriteViewReducr()
+//        }))
+//        .tabItem {
+//            Image(systemName: "pencil.line")
+//            Text("작성")
+//        }
+//    }
+//    
+//    var searchView: some View {
+//        SearchView(store: Store(initialState: SearchViewReducer.State(), reducer: {
+//            SearchViewReducer()
+//        }))
+//        .tabItem {
+//            Image(systemName: "magnifyingglass")
+//            Text("검색")
+//        }
+//    }
 }
 
 struct MainView_Previews: PreviewProvider {
