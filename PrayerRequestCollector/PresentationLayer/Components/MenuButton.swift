@@ -9,7 +9,14 @@ import SwiftUI
 
 struct MenuButton: View {
     let imageName: String
+    let backgroundColor: Color
     let action: () -> Void
+    
+    init(imageName: String, backgroundColor: Color = Color.white, action: @escaping () -> Void) {
+        self.imageName = imageName
+        self.backgroundColor = backgroundColor
+        self.action = action
+    }
     
     var body: some View {
         Button(action: {
@@ -18,7 +25,7 @@ struct MenuButton: View {
             }
         }) {
             Circle()
-                .fill(Color.white)
+                .fill(backgroundColor)
                 .frame(width: 40, height: 40)
                 .shadow(radius: 5)
                 .overlay(

@@ -8,7 +8,7 @@
 import Foundation
 import ComposableArchitecture
 
-struct MainViewReducer: Reducer {
+struct ContainerViewReducer: Reducer {
     
     @Dependency(\.groupClient) var groupClient
 
@@ -19,6 +19,7 @@ struct MainViewReducer: Reducer {
     
     enum Action: Equatable {
         case viewEvent(ViewEvent)
+        case menuSelectEnable
         case tapMenuButton(CoordinateAction)
         case tapDimmedBackground
     }
@@ -26,7 +27,20 @@ struct MainViewReducer: Reducer {
     var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
+            case .menuSelectEnable:
+                let changedMenuSelectingMode: State.MenuSelectingMode = {
+                    switch state.menuButtonMode {
+                    case .selecting:
+                        return .notSelecting
+                    case .notSelecting:
+                        return .selecting
+                    }
+                }()
+                
+                state.menuButtonMode = changedMenuSelectingMode
+                return .none
             case let .tapMenuButton(coordinateAction):
+                print("### tap menu button")
                 let changedMenuSelectingMode: State.MenuSelectingMode = {
                     switch state.menuButtonMode {
                     case .selecting:
@@ -63,11 +77,12 @@ struct MainViewReducer: Reducer {
                 return .none
             }
         }
+        ._printChanges()
     }
 }
 
 // MARK: - Action
-extension MainViewReducer.Action {
+extension ContainerViewReducer.Action {
     enum ViewEvent {
         case onAppear
     }
@@ -81,7 +96,7 @@ extension MainViewReducer.Action {
 }
 
 // MARK: - State
-extension MainViewReducer.State {
+extension ContainerViewReducer.State {
     enum MenuSelectingMode: Equatable {
         case selecting
         case notSelecting

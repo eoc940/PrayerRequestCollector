@@ -14,8 +14,8 @@ struct PrayerRequestCollectorApp: App {
 
     var body: some Scene {
         WindowGroup {
-            MainView(store: Store(initialState: MainViewReducer.State(), reducer: {
-                MainViewReducer()
+            ContainerView(store: Store(initialState: ContainerViewReducer.State(), reducer: {
+                ContainerViewReducer()
             }))
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }

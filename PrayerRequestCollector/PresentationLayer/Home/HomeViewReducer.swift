@@ -19,7 +19,7 @@ struct HomeViewReducer: Reducer {
     enum Action: Equatable {
         case viewEvent(ViewEvent)
         case getPrayers(TaskResult<[Prayer]>)
-        case rowrReducerAction(id: PrayerRowReducer.State.ID, action: PrayerRowReducer.Action)
+        case rowReducerAction(id: PrayerRowReducer.State.ID, action: PrayerRowReducer.Action)
     }
     
     var body: some ReducerOf<Self> {
@@ -41,6 +41,9 @@ struct HomeViewReducer: Reducer {
             default:
                 return .none
             }
+        }
+        .forEach(\.rowReducers, action: /Action.rowReducerAction(id:action:)) {
+            PrayerRowReducer()
         }
     }
     

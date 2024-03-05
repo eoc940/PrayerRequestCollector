@@ -33,6 +33,7 @@ struct GroupView: View {
                 .path(childAction)
         })) {
             ZStack {
+                Text("GroupView")
                 List {
                     ForEachStore(self.store.scope(state: \.rowReducers, action: GroupViewReducer.Action.rowReducerAction(id: action:))) { store in
                         let rowState = store.withState { $0 }

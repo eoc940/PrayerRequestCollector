@@ -33,6 +33,7 @@ struct WriteView: View {
     
     var groupList: some View {
         VStack {
+            Text("WriteView")
             if !viewStore.isListHidden {
                 List {
                     ForEachStore(self.store.scope(state: \.rowReducers, action: WriteViewReducr.Action.rowReducerAction(id:action:))) { store in

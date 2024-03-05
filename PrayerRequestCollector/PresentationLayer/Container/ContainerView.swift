@@ -8,12 +8,12 @@
 import SwiftUI
 import ComposableArchitecture
 
-struct MainView: View {
-    let store: StoreOf<MainViewReducer>
+struct ContainerView: View {
+    let store: StoreOf<ContainerViewReducer>
     @ObservedObject
-    var viewStore: ViewStoreOf<MainViewReducer>
+    var viewStore: ViewStoreOf<ContainerViewReducer>
     
-    init(store: StoreOf<MainViewReducer>) {
+    init(store: StoreOf<ContainerViewReducer>) {
         self.store = store
         self.viewStore = ViewStore(store, observe: { state in
             return state
@@ -33,11 +33,12 @@ struct MainView: View {
     }
 }
 
-extension MainView {
+extension ContainerView {
     var presentedView: some View {
         VStack {
             switch viewStore.presentedScreen {
             case .home:
+                let _ = print("### home present")
                 HomeView(store: .init(initialState: HomeViewReducer.State(rowReducers: .init()), reducer: {
                     HomeViewReducer()
                 }))
@@ -86,11 +87,17 @@ extension MainView {
                         MenuButton(imageName: "pencil.circle.fill") {
                             viewStore.send(.tapMenuButton(.search))
                         }
+                        
+                        MenuButton(imageName: "plus") {
+                            viewStore.send(.tapMenuButton(.home))
+                        }
+                    } else {
+                        MenuButton(imageName: "plus", backgroundColor: Color.black) {
+                            viewStore.send(.menuSelectEnable)
+                        }
                     }
                     
-                    MenuButton(imageName: "plus") {
-                        viewStore.send(.tapMenuButton(.home))
-                    }
+                    
                 }
                 .padding(.bottom, 20)
                 .padding(.trailing, 20)
@@ -109,8 +116,8 @@ extension MainView {
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView(store: Store(initialState: MainViewReducer.State(), reducer: {
-            MainViewReducer()
+        ContainerView(store: Store(initialState: ContainerViewReducer.State(), reducer: {
+            ContainerViewReducer()
         }))
     }
 }

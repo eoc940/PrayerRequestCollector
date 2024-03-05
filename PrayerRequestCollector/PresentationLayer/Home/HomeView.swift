@@ -22,7 +22,16 @@ struct HomeView: View {
     
     var body: some View {
         VStack {
+            text
             prayerListView
+        }
+        .background(Color.gray)
+
+    }
+    
+    var text: some View {
+        VStack {
+            Text("Today's Prayer")
         }
         .onAppear {
             viewStore.send(.viewEvent(.onAppear))
@@ -32,10 +41,16 @@ struct HomeView: View {
     var prayerListView: some View {
         VStack {
             List {
-                ForEachStore(self.store.scope(state: \.rowReducers, action: HomeViewReducer.Action.rowrReducerAction(id: action:))) { store in
+                ForEachStore(self.store.scope(state: \.rowReducers, action: HomeViewReducer.Action.rowReducerAction(id: action:))) { store in
                     PrayerRow(store: store)
                 }
+                .listRowSeparator(.hidden)
+                .listRowBackground(Color.gray)
+                .listRowInsets(.init(top: 20, leading: 30, bottom: 20, trailing: 30))
+
             }
+            .listStyle(.plain)
         }
+        
     }
 }

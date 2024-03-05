@@ -21,15 +21,22 @@ struct PrayerRow: View {
     }
     
     var body: some View {
-        VStack {
+        VStack(alignment: .leading, spacing: 20){
             HStack {
                 Text(viewStore.memberName)
+                    .font(.system(size: 18))
                 Spacer()
                 Text(viewStore.date)
+                    .font(.system(size: 14))
+
             }
             Text(viewStore.content)
+                .font(.system(size: 14))
+
         }
+        .padding(.all, 20)
         .background(Color.white)
+        .cornerRadius(10)
     }
 }
 
