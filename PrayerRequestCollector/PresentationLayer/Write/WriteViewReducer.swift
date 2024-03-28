@@ -67,9 +67,7 @@ struct WriteViewReducr: Reducer {
                 default:
                     return .none
                 }
-                
-                
-
+            
             default:
                 return .none
             }

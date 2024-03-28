@@ -19,6 +19,22 @@ struct ContainerView: View {
             return state
         })
     }
+    
+    let homeView = HomeView(store: .init(initialState: HomeViewReducer.State(rowReducers: .init()), reducer: {
+        HomeViewReducer()
+    }))
+    
+    let groupView = GroupView(store: .init(initialState: GroupViewReducer.State(rowReducers: .init()), reducer: {
+        GroupViewReducer()
+    }))
+    
+    let writeView = WriteView(store: .init(initialState: WriteViewReducr.State(rowReducers: .init()), reducer: {
+        WriteViewReducr()
+    }))
+    
+    let searchView = SearchView(store: .init(initialState: SearchViewReducer.State(), reducer: {
+        SearchViewReducer()
+    }))
 
     var body: some View {
         ZStack {
@@ -39,21 +55,19 @@ extension ContainerView {
             switch viewStore.presentedScreen {
             case .home:
                 let _ = print("### home present")
-                HomeView(store: .init(initialState: HomeViewReducer.State(rowReducers: .init()), reducer: {
-                    HomeViewReducer()
-                }))
+                homeView
             case .group:
-                GroupView(store: .init(initialState: GroupViewReducer.State(rowReducers: .init()), reducer: {
-                    GroupViewReducer()
-                }))
+                let _ = print("### group present")
+                groupView
+                
             case .write:
-                WriteView(store: .init(initialState: WriteViewReducr.State(rowReducers: .init()), reducer: {
-                    WriteViewReducr()
-                }))
+                let _ = print("### write present")
+                writeView
+                
             case .search:
-                SearchView(store: .init(initialState: SearchViewReducer.State(), reducer: {
-                    SearchViewReducer()
-                }))
+                let _ = print("### search present")
+                searchView
+                
             }
         }
     }
@@ -92,7 +106,7 @@ extension ContainerView {
                             viewStore.send(.tapMenuButton(.home))
                         }
                     } else {
-                        MenuButton(imageName: "plus", backgroundColor: Color.black) {
+                        MenuButton(imageName: "plus", backgroundColor: Color.gray) {
                             viewStore.send(.menuSelectEnable)
                         }
                     }

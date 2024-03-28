@@ -25,7 +25,7 @@ struct HomeView: View {
             text
             prayerListView
         }
-        .background(Color.gray)
+        .background(Color(uiColor: .lightGray))
 
     }
     
@@ -45,7 +45,7 @@ struct HomeView: View {
                     PrayerRow(store: store)
                 }
                 .listRowSeparator(.hidden)
-                .listRowBackground(Color.gray)
+                .listRowBackground(Color(uiColor: .lightGray))
                 .listRowInsets(.init(top: 20, leading: 30, bottom: 20, trailing: 30))
 
             }
